@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+  <form action="/" method="POST" class="form-horizontal">
+    {% csrf_token %}
+    <fieldset>
+      <legend>Dados do candidato</legend>
+      <div class="form-group">
+        <label for="{{form.name.id_for_label}}"
+          class="col-sm-4 control-label">
+          {{ form.name.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.name | attr:"class:form-control" }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="{{form.email.id_for_label}}"
+          class="col-sm-4 control-label">
+          {{ form.email.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.email | attr:"class:form-control" }}
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Avalie seu conhecimento de 0 a 10 nos seguintes itens
+      </legend>
+      <div class="form-group">
+        <label for="{{form.html_level.id_for_label}}" 
+          class="col-sm-4 control-label">
+          {{ form.html_level.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.html_level | attr:"class:form-control" }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="{{form.css_level.id_for_label}}"
+          class="col-sm-4 control-label">
+          {{ form.css_level.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.css_level | attr:"class:form-control" }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="{{form.js_level.id_for_label}}"
+          class="col-sm-4 control-label">
+          {{ form.js_level.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.js_level | attr:"class:form-control" }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="{{form.py_level.id_for_label}}"
+          class="col-sm-4 control-label">
+          {{ form.py_level.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.py_level | attr:"class:form-control" }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="{{form.dj_level.id_for_label}}"
+          class="col-sm-4 control-label">
+          {{ form.dj_level.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.dj_level | attr:"class:form-control" }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="{{form.ios_level.id_for_label}}"
+          class="col-sm-4 control-label">
+          {{ form.ios_level.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.ios_level | attr:"class:form-control" }}
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="{{form.android_level.id_for_label}}"
+          class="col-sm-4 control-label">
+          {{ form.android_level.label }}
+        </label>
+        <div class="col-sm-8">
+          {{ form.android_level | attr:"class:form-control" }}
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Enviar</button>
+      </div>
+    </div>
+  </form>
+{% endblock content %}
